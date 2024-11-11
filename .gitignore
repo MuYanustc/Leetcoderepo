@@ -1,0 +1,5 @@
+# Ignore all files except for .cpp files in the Code directory and the .gitignore file
+.*
+leetcode
+*.json
+!.gitignore
