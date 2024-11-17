@@ -3,3 +3,5 @@
 leetcode
 *.json
 !.gitignore
+test.cpp
+*.exe
