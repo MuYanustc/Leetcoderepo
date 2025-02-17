@@ -5,7 +5,6 @@
  * [763] 划分字母区间
  */
 
-
 // @lcpr-template-start
 using namespace std;
 #include <algorithm>
@@ -27,31 +26,29 @@ using namespace std;
 // @lc code=start
 class Solution {
 public:
-    vector<int> partitionLabels(string s) {
+    vector<int> partitionLabels(string s)
+    {
         vector<int> res;
-        unordered_map<char,int> mp;
-        for(int i = 0;i<s.size();i++){
+        unordered_map<char, int> mp;
+        for (int i = 0; i < s.size(); i++) {
             mp[s[i]] = i;
         }
         int start = 0;
         int end = mp[s[0]];
-        for(int i = 1;i<s.size();i++){
-            if(i>end){
-                res.push_back(end-start+1);
+        for (int i = 1; i < s.size(); i++) {
+            if (i > end) {
+                res.push_back(end - start + 1);
                 start = i;
                 end = mp[s[i]];
-            }
-            else{
-                end = max(end,mp[s[i]]);
+            } else {
+                end = max(end, mp[s[i]]);
             }
         }
-        res.push_back(end-start+1);
+        res.push_back(end - start + 1);
         return res;
     }
 };
 // @lc code=end
-
-
 
 /*
 // @lcpr case=start
@@ -63,4 +60,3 @@ public:
 // @lcpr case=end
 
  */
-
